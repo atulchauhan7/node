@@ -7,10 +7,11 @@ app.get('/testing',(req,res)=>{
 })
 
 app.post('/userCreate',(req,res)=>{
-    const email=req.body.email
-    const name=req.body.name
-    sendGridFunc2(email,name)
-    res.status(201).send({email,name})
+    
+    // const email=req.body.email
+    // const name=req.body.name
+    sendGridFunc2(req.body.email,req.body.name)
+    res.status(201).send({email:req.body.email,name:req.body.name})
 
     
     

@@ -1,7 +1,7 @@
 const mongoose=require('mongoose');
 const validator=require('validator');
 
-const user=mongoose.model('user',{
+const User=mongoose.Schema({
     name:{
         type:String,
         require:true
@@ -41,5 +41,7 @@ const user=mongoose.model('user',{
         }
     }
 })
+
+const user=mongoose.model('user',User)
 
 module.exports=user
